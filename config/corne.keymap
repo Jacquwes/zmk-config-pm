@@ -279,7 +279,7 @@
             flavor = "balanced"; \
             hold-trigger-on-release; \
             tapping-term-ms = <200>; \
-            quick-tap-ms = <55>;
+            quick-tap-ms = <55>
             
         hm: HomerowMods {
             homerow_config;
