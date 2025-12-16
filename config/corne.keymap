@@ -8,6 +8,24 @@
         zmk,physical-layout = &physical_layout_5col;  // Seulement ça !
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_z {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp Z>;
+        }
+
+        combo_q {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp Q>;
+        }
+
+    };
+
+
+    
     physical_layout_5col: physical_layout_5col {
         compatible = "zmk,physical-layout";
         display-name = "5 Column";
