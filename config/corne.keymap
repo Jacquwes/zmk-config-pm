@@ -4,9 +4,65 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    /* chosen { */
-    /*     zmk,physical-layout = &corne_5col_layout; */
-    /* }; */
+    chosen {
+        zmk,physical-layout = &physical_layout_5col;  // Seulement ça !
+    };
+
+    physical_layout_5col: physical_layout_5col {
+        compatible = "zmk,physical-layout";
+        display-name = "5 Column";
+        
+        transform = <&five_column_transform>;  // ← Le transform est ICI
+        
+        kscan = <&kscan0>;
+        
+        keys  // <width height x y rot_x rot_y rot_angle>
+            // Row 0 - Gauche
+            = <&key_physical_attrs 100 100    0   0 0 0 0>  // F (0)
+            , <&key_physical_attrs 100 100  100   0 0 0 0>  // P (1)
+            , <&key_physical_attrs 100 100  200   0 0 0 0>  // D (2)
+            , <&key_physical_attrs 100 100  300   0 0 0 0>  // L (3)
+            , <&key_physical_attrs 100 100  400   0 0 0 0>  // X (4)
+            // Row 0 - Droite
+            , <&key_physical_attrs 100 100  700   0 0 0 0>  // # (5)
+            , <&key_physical_attrs 100 100  800   0 0 0 0>  // . (6)
+            , <&key_physical_attrs 100 100  900   0 0 0 0>  // / (7)
+            , <&key_physical_attrs 100 100 1000   0 0 0 0>  // " (8)
+            , <&key_physical_attrs 100 100 1100   0 0 0 0>  // ' (9)
+            // Row 1 - Gauche
+            , <&key_physical_attrs 100 100    0 110 0 0 0>  // S (10)
+            , <&key_physical_attrs 100 100  100 110 0 0 0>  // N (11)
+            , <&key_physical_attrs 100 100  200 110 0 0 0>  // T (12)
+            , <&key_physical_attrs 100 100  300 110 0 0 0>  // H (13)
+            , <&key_physical_attrs 100 100  400 110 0 0 0>  // K (14)
+            // Row 1 - Droite
+            , <&key_physical_attrs 100 100  700 110 0 0 0>  // , (15)
+            , <&key_physical_attrs 100 100  800 110 0 0 0>  // A (16)
+            , <&key_physical_attrs 100 100  900 110 0 0 0>  // E (17)
+            , <&key_physical_attrs 100 100 1000 110 0 0 0>  // I (18)
+            , <&key_physical_attrs 100 100 1100 110 0 0 0>  // C (19)
+            // Row 2 - Gauche
+            , <&key_physical_attrs 100 100    0 220 0 0 0>  // V (20)
+            , <&key_physical_attrs 100 100  100 220 0 0 0>  // W (21)
+            , <&key_physical_attrs 100 100  200 220 0 0 0>  // G (22)
+            , <&key_physical_attrs 100 100  300 220 0 0 0>  // M (23)
+            , <&key_physical_attrs 100 100  400 220 0 0 0>  // J (24)
+            // Row 2 - Droite
+            , <&key_physical_attrs 100 100  700 220 0 0 0>  // - (25)
+            , <&key_physical_attrs 100 100  800 220 0 0 0>  // U (26)
+            , <&key_physical_attrs 100 100  900 220 0 0 0>  // O (27)
+            , <&key_physical_attrs 100 100 1000 220 0 0 0>  // Y (28)
+            , <&key_physical_attrs 100 100 1100 220 0 0 0>  // B (29)
+            // Row 3 - Pouces gauche
+            , <&key_physical_attrs 100 100  200 330 0 0 0>  // BSPC (30)
+            , <&key_physical_attrs 100 100  300 330 0 0 0>  // R (31)
+            , <&key_physical_attrs 100 100  400 330 0 0 0>  // DEL (32)
+            // Row 3 - Pouces droite
+            , <&key_physical_attrs 100 100  700 330 0 0 0>  // BSPC (33)
+            , <&key_physical_attrs 100 100  800 330 0 0 0>  // SPACE (34)
+            , <&key_physical_attrs 100 100  900 330 0 0 0>  // RET (35)
+            ;
+    };
 
     macros {
         dquo_space: dquo_space {
@@ -434,8 +490,8 @@
         media {
             bindings = <
   &kp F1      &kp F2       &kp F3          &kp F4         &kp F5       &kp F6       &kp F7         &kp F8        &kp F9         &kp F10
-  &trans      &trans       &trans          &trans         &trans       &kp F11      &kp C_PREV     &kp C_VOL_DN  &kp C_VOL_UP   &kp C_NEXT
-  &trans      &trans       &trans          &trans         &trans       &kp F12      &kp C_BRI_DN   &kp C_BRI_UP  &kp C_MUTE     &kp C_PP
+  &bt BT_SEL1 &bt BT_SEL2  &bt BT_SEL3     &bt BT_SEL4    &bt BT_CLER  &kp F11      &kp C_PREV     &kp C_VOL_DN  &kp C_VOL_UP   &kp C_NEXT
+  &trans      &trans       &trans          &trans         &studio_unlock &kp F12      &kp C_BRI_DN   &kp C_BRI_UP  &kp C_MUTE     &kp C_PP
                            &trans          &trans         &trans       &trans       &trans         &trans
             >;
         };
