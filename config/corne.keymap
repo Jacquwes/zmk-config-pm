@@ -262,7 +262,7 @@
             bindings = <&kp RALT &kp LS(N0)>;
             label = "DEGREE";
         };
-        
+
         micro: micro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -270,19 +270,17 @@
             label = "MICRO";
         };
     };
-    
+
     behaviors {
-    #define homerow_config \
-            compatible = "zmk,behavior-hold-tap"; \
-            label = "HOMEROW_MODS_LEFT"; \
-            #binding-cells = <2>; \
-            flavor = "balanced"; \
-            hold-trigger-on-release; \
-            tapping-term-ms = <200>; \
-            quick-tap-ms = <55>
-            
+
         hm: HomerowMods {
-            homerow_config;
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <55>;
             bindings = <&kp>, <&kp>;
         };
 
