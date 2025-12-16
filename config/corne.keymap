@@ -1,3 +1,4 @@
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -11,7 +12,9 @@
         dquo_space: dquo_space {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
+            bindings = 
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
                 <&macro_tap>,
                 <&kp DQT &kp SPACE>;
             label = "DQUO_SPACE";
@@ -21,6 +24,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
                 <&macro_tap>,
                 <&kp SQT &kp SPACE>;
             label = "SQUO_SPACE";
