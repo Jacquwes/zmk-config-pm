@@ -1,0 +1,432 @@
+/ {
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+
+    macros {
+        dquo_space: dquo_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOUBLE_QUOTES &kp SPACE>;
+            label = "DQUO_SPACE";
+        };
+    
+        squo_space: squo_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE &kp SPACE>;
+            label = "SQUO_SPACE";
+        };
+    
+        t_pairDquo: t_pairDquo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
+                <&macro_tap>,
+                <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+            label = "T_PAIRDQUO";
+            tap-ms = <40>;
+        };
+    
+        t_pairSquo: t_pairSquo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
+                <&macro_tap>,
+                <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT>;
+            label = "T_PAIRSQUO";
+            tap-ms = <40>;
+        };
+    
+        t_pairLtGt: t_pairLtGt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
+                <&macro_tap>,
+                <&kp LT &kp GT &kp LEFT>;
+            label = "T_PAIRLTGT";
+            tap-ms = <40>;
+        };
+
+        // Paires de délimiteurs
+        pair_paren: pair_paren {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
+                <&macro_tap>,
+                <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "PAIR_PAREN";
+            tap-ms = <40>;
+        };
+        
+        pair_brace: pair_brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
+                <&macro_tap>,
+                <&kp LBRC &kp RBRC &kp LEFT>;
+            label = "PAIR_BRACE";
+            tap-ms = <40>;
+        };
+        
+        pair_bracket: pair_bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
+                <&macro_tap>,
+                <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "PAIR_BRACKET";
+            tap-ms = <40>;
+        };
+        
+        code_block: code_block {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
+                <&macro_tap>,
+                <&kp LBRC &kp RET &kp RET &kp RBRC &kp UP &kp TAB>;
+            label = "CODE_BLOCK";
+            tap-ms = <40>;
+        };
+
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "ARROW";
+        };
+
+        plus_eq: plus_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS &kp EQUAL>;
+            label = "PLUS_EQ";
+        };
+
+        minus_eq: minus_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp EQUAL>;
+            label = "MINUS_EQ";
+        };
+
+        lte: lte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp EQUAL>;
+            label = "LTE";
+        };
+
+        gte: gte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GT &kp EQUAL>;
+            label = "GTE";
+        };
+
+        or_eq: or_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE &kp EQUAL>;
+            label = "OR_EQ";
+        };
+
+        // Lettres accentuées pour US-intl
+        a_grave: a_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp A>;
+            label = "A_GRAVE";
+        };
+        
+        e_acute: e_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp E>;
+            label = "E_ACUTE";
+        };
+        
+        e_grave: e_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp E>;
+            label = "E_GRAVE";
+        };
+        
+        e_circ: e_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp CARET &kp E>;
+            label = "E_CIRC";
+        };
+        
+        u_grave: u_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp U>;
+            label = "U_GRAVE";
+        };
+        
+        i_circ: i_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp CARET &kp I>;
+            label = "I_CIRC";
+        };
+        
+        o_circ: o_circ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp CARET &kp O>;
+            label = "O_CIRC";
+        };
+        
+        c_cedille: c_cedille {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp COMMA>;
+            label = "C_CEDILLE";
+        };
+        
+        i_trema: i_trema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp SPACE &kp I>;
+            label = "I_TREMA";
+        };
+        
+        u_trema: u_trema {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp SPACE &kp U>;
+            label = "U_TREMA";
+        };
+
+        // Symboles spéciaux
+        guillemet_open: guillemet_open {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp LBKT>;
+            label = "GUILLEMET_OPEN";
+        };
+        
+        guillemet_close: guillemet_close {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp RBKT>;
+            label = "GUILLEMET_CLOSE";
+        };
+        
+        ae_ligature: ae_ligature {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp Z>;
+            label = "AE_LIGATURE";
+        };
+        
+        oe_ligature: oe_ligature {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp O>;
+            label = "OE_LIGATURE";
+        };
+        
+        euro: euro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp N5>;
+            label = "EURO";
+        };
+        
+        degree: degree {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp LS(N0)>;
+            label = "DEGREE";
+        };
+        
+        micro: micro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RALT &kp M>;
+            label = "MICRO";
+        };
+    };
+    
+    behaviors {
+    #define homerow_config \
+            compatible = "zmk,behavior-hold-tap"; \
+            label = "HOMEROW_MODS_LEFT"; \
+            #binding-cells = <2>; \
+            flavor = "balanced"; \
+            hold-trigger-on-release; \
+            tapping-term-ms = <200>; \
+            quick-tap-ms = <55>;
+            
+        hm: HomerowMods {
+            homerow_config;
+            bindings = <&kp>, <&kp>;
+        };
+
+        DotColn: DotColn {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOTCOLN";
+            bindings = <&kp DOT>, <&kp COLON>;
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        SlshStar: SlshStar {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SLSHSTAR";
+            bindings = <&SlshBslh>, <&kp STAR>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        SlshBslh: SlshBslh {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SLSHBSLH";
+            bindings = <&kp FSLH>, <&kp BACKSLASH>;
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RSFT)>;
+        };
+
+        HashDllr: HashDllr {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HASHDLLR";
+            bindings = <&kp HASH>, <&kp DOLLAR>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        MinusPlus: MinusPlus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUSPLUS";
+            bindings = <&kp MINUS>, <&kp PLUS>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // <= sans shift, >= avec shift
+        LteGte: LteGte {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LTEGTE";
+            bindings = <&lte>, <&gte>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+    #define hold_tap_config \
+            compatible = "zmk,behavior-hold-tap"; \
+            #binding-cells = <2>; \
+            tapping-term-ms = <200>; \
+            flavor = "tap-preferred"
+        
+        DoubleQuotesLt: DoubleQuotesLt {
+            hold_tap_config;
+            bindings = <&pairDquoLt>, <&DquotLt>;
+        };
+
+        pairDquoLt: pairDquoLt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&t_pairDquo>, <&t_pairLtGt>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        DquotLt: DquotLt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&dquo_space>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        SingleQuoteGt: SingleQuoteGt {
+            hold_tap_config;
+            bindings = <&pairSquoGt>, <&SquotGT>;
+        };
+
+        pairSquoGt: pairSquoGt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&t_pairSquo>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        SquotGT: SquotGT {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&squo_space>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Layer 0: BASE
+        base {
+            bindings = <
+  &kp F       &kp P        &kp D           &kp L          &kp X        &HashDllr    &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
+  &hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &kp COMMA    &hm RSHIFT A   &hm RCTRL E   &hm RALT I           &hm RGUI C
+  &kp V       &kp W        &kp G           &kp M          &kp J        &MinusPlus   &kp U          &kp O         &kp Y                &kp B
+                           &lt 3 BSPC      &lt 1 R        &lt 4 DEL    &lt 2 BSPC   &lt 1 SPACE    &lt 3 RET
+            >;
+        };
+
+        // Layer 1: SYM
+        sym {
+            bindings = <
+  &kp EXCL    &kp AT       &pair_brace     &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
+  &kp CARET   &kp AMPS     &pair_paren     &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
+  &kp GRAVE   &kp TILDE    &pair_bracket   &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
+                           &trans          &trans         &trans       &code_block  &trans         &or_eq
+            >;
+        };
+
+        // Layer 2: FRENCH
+        french {
+            bindings = <
+  &e_acute    &e_grave     &e_circ         &a_grave       &c_cedille   &guillemet_open   &guillemet_close   &ae_ligature   &oe_ligature   &euro
+  &u_grave    &i_circ      &o_circ         &trans         &trans       &degree           &micro             &trans         &trans         &trans
+  &i_trema    &u_trema     &trans          &trans         &trans       &trans            &trans             &trans         &trans         &trans
+                           &trans          &trans         &trans       &trans            &trans             &trans
+            >;
+        };
+
+        // Layer 3: NAV
+        nav {
+            bindings = <
+  &trans      &trans       &trans          &trans         &trans       &kp PG_UP    &kp HOME       &kp UP        &kp END        &kp INS
+  &kp LGUI    &kp LALT     &kp LCTRL       &kp LSHIFT     &trans       &kp PG_DN    &kp LEFT       &kp DOWN      &kp RIGHT      &kp DEL
+  &trans      &trans       &trans          &trans         &trans       &trans       &trans         &trans        &trans         &trans
+                           &trans          &trans         &trans       &kp ESC      &kp TAB        &trans
+            >;
+        };
+
+        // Layer 4: MEDIA
+        media {
+            bindings = <
+  &kp F1        &kp F2       &kp F3         &kp F4         &kp F5       &kp F6       &kp F7         &kp F8        &kp F9         &kp F10
+  &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4 &kp F11      &kp C_PREV     &kp C_VOL_DN  &kp C_VOL_UP   &kp C_NEXT
+  &trans        &trans       &trans         &trans         &trans       &kp F12      &kp C_BRI_DN   &kp C_BRI_UP  &kp C_MUTE     &kp C_PP
+                             &trans         &trans         &trans       &trans       &trans         &trans
+            >;
+        };
+    };
+}
