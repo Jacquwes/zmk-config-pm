@@ -18,7 +18,7 @@
 
         combo_q {
             timeout-ms = <50>;
-            key-positions = <2 3>;
+            key-positions = <13 14>;
             bindings = <&kp Q>;
         };
 
@@ -112,7 +112,7 @@
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
                 <&macro_tap>,
-                <&kp DQT &kp DQT &kp LEFT>;
+                <&kp DQT &kp SPACE &kp DQT &kp SPACE &kp LEFT>;
             label = "T_PAIRDQUO";
             tap-ms = <40>;
         };
@@ -124,7 +124,7 @@
                 <&macro_release>,
                 <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
                 <&macro_tap>,
-                <&kp SQT &kp SQT &kp LEFT>;
+                <&kp SQT &kp SPACE &kp SQT &kp SPACE &kp LEFT>;
             label = "T_PAIRSQUO";
             tap-ms = <40>;
         };
@@ -367,6 +367,14 @@
             bindings = <&kp>, <&kp>;
         };
 
+        CommaScoln: CommaScoln {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMASCOLN";
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
         DotColn: DotColn {
             compatible = "zmk,behavior-mod-morph";
             label = "DOTCOLN";
@@ -468,7 +476,7 @@
         base {
             bindings = <
   &kp F       &kp P        &kp D           &kp L          &kp X        &HashDllr    &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
-  &hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &kp COMMA    &hm RSHIFT A   &hm RCTRL E   &hm RALT I           &hm RGUI C
+  &hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &CommaScoln  &hm RSHIFT A   &hm RCTRL E   &hm RALT I           &hm RGUI C
   &kp V       &kp W        &kp G           &kp M          &kp J        &MinusPlus   &kp U          &kp O         &kp Y                &kp B
                            &lt 3 BSPC      &lt 1 R        &lt 4 DEL    &lt 2 BSPC   &lt 1 SPACE    &lt 3 RET
             >;
@@ -480,7 +488,7 @@
   &kp EXCL    &kp AT       &pair_brace     &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
   &kp CARET   &kp AMPS     &pair_paren     &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
   &kp GRAVE   &kp TILDE    &pair_bracket   &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
-                           &trans          &trans         &trans       &code_block  &trans         &or_eq
+                           &trans          &trans         &trans       &code_block  &kp UNDERSCORE &or_eq
             >;
         };
 
@@ -488,7 +496,7 @@
         french {
             bindings = <
   &e_acute    &e_grave     &e_circ         &a_grave       &c_cedille   &guillemet_open   &guillemet_close   &ae_ligature   &oe_ligature   &euro
-  &u_grave    &i_circ      &o_circ         &trans         &trans       &degree           &micro             &trans         &trans         &trans
+  &u_grave    &i_circ      &o_circ         &kp BACKSLASH  &trans       &degree           &micro             &trans         &trans         &trans
   &i_trema    &u_trema     &trans          &trans         &trans       &trans            &trans             &trans         &trans         &trans
                            &trans          &trans         &trans       &trans            &trans             &trans
             >;
@@ -497,9 +505,9 @@
         // Layer 3: NAV
         nav {
             bindings = <
-  &trans      &trans       &trans          &trans         &trans       &kp PG_UP    &kp HOME       &kp UP        &kp END        &kp INS
-  &kp LGUI    &kp LALT     &kp LCTRL       &kp LSHIFT     &trans       &kp PG_DN    &kp LEFT       &kp DOWN      &kp RIGHT      &kp DEL
-  &trans      &trans       &trans          &trans         &trans       &trans       &trans         &trans        &trans         &trans
+  &trans      &trans       &trans          &caps_word     &trans       &trans       &trans         &trans        &trans         &kp INS
+  &kp LGUI    &kp LALT     &kp LCTRL       &kp LSHIFT     &trans       &trans       &kp LEFT       &kp DOWN      &kp UP         &kp RIGHT
+  &trans      &trans       &trans          &trans         &trans       &trans       &kp HOME       &kp PG_DOWN   &kp PG_UP      &kp END
                            &trans          &trans         &trans       &kp ESC      &kp TAB        &trans
             >;
         };
