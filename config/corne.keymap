@@ -480,21 +480,6 @@
             bindings = <&squo_space>, <&kp GT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        Lbrc: Lbrc {
-            hold_tap_config;
-            bindings = <&pair_brace>, <&kp LBRC>;
-        };
-
-        Lpar: Lpar {
-            hold_tap_config;
-            bindings = <&pair_paren>, <&kp LPAR>;
-        };
-
-        Lbra: Lbra {
-            hold_tap_config;
-            bindings = <&pair_bracket>, <&kp LBKT>;
-        };
     };
 
     keymap {
@@ -513,10 +498,10 @@
         // Layer 1: SYM
         sym {
             bindings = <
-  &kp EXCL    &kp AT       &Lbrc 0 0   &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
-  &trem_space &kp AMPS     &Lpar 0 0   &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
-  &kp GRAVE   &kp TILDE    &Lbra 0 0   &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
-                           &trans      &trans         &trans       &code_block  &kp UNDERSCORE &or_eq
+  &kp EXCL    &kp AT       &mt &pair_brace LBRC   &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
+  &trem_space &kp AMPS     &mt &pair_paren LPAR   &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
+  &kp GRAVE   &kp TILDE    &mt &pair_bracket LBKT &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
+                           &trans                 &trans         &trans       &code_block  &kp UNDERSCORE &or_eq
             >;
         };
 
