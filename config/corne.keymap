@@ -106,6 +106,17 @@
                 <&kp SQT &kp SPACE>;
             label = "SQUO_SPACE";
         };
+
+        trem_space: trem_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+                <&macro_tap>,
+                <&kp CARET &kp SPACE>;
+            label = "TREM_SPACE";
+        }
     
         t_pairDquo: t_pairDquo {
             compatible = "zmk,behavior-macro";
@@ -503,7 +514,7 @@
         sym {
             bindings = <
   &kp EXCL    &kp AT       &Lbrc    &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
-  &kp CARET   &kp AMPS     &Lpar    &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
+  &trem_space &kp AMPS     &Lpar    &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
   &kp GRAVE   &kp TILDE    &Lbra    &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
                            &trans   &trans         &trans       &code_block  &kp UNDERSCORE &or_eq
             >;
