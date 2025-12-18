@@ -116,7 +116,7 @@
                 <&macro_tap>,
                 <&kp CARET &kp SPACE>;
             label = "TREM_SPACE";
-        }
+        };
     
         t_pairDquo: t_pairDquo {
             compatible = "zmk,behavior-macro";
@@ -484,17 +484,17 @@
         Lbrc: Lbrc {
             hold_tap_config;
             bindings = <&pair_brace>, <&kp LBRC>;
-        }
+        };
 
         Lpar: Lpar {
             hold_tap_config;
             bindings = <&pair_paren>, <&kp LPAR>;
-        }
+        };
 
         Lbra: Lbra {
             hold_tap_config;
             bindings = <&pair_bracket>, <&kp LBKT>;
-        }
+        };
     };
 
     keymap {
