@@ -513,10 +513,10 @@
         // Layer 1: SYM
         sym {
             bindings = <
-  &kp EXCL    &kp AT       &Lbrc    &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
-  &trem_space &kp AMPS     &Lpar    &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
-  &kp GRAVE   &kp TILDE    &Lbra    &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
-                           &trans   &trans         &trans       &code_block  &kp UNDERSCORE &or_eq
+  &kp EXCL    &kp AT       &Lbrc 0 0   &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
+  &trem_space &kp AMPS     &Lpar 0 0   &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
+  &kp GRAVE   &kp TILDE    &Lbra 0 0   &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
+                           &trans      &trans         &trans       &code_block  &kp UNDERSCORE &or_eq
             >;
         };
 
