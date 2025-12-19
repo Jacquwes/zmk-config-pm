@@ -489,7 +489,7 @@
 
         ExclQuest: ExclQuest {
             compatible = "zmk,behavior-mod-morph";
-            label = "MINUSPLUS";
+            label = "EXCLQUEST";
             bindings = <&kp EXCLAMATION>, <&kp QUESTION>;
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
