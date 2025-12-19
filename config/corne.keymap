@@ -362,7 +362,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press &kp RALT>,
-                <&macro_tap &kp k>,
+                <&macro_tap &kp K>,
                 <&macro_release &kp RALT>;
             label = "OE_LIGATURE";
         };
