@@ -236,7 +236,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EQUAL &kp GT>;
-            label = "ARROW";
+            label = "ARROW_DOUBLE";
         };
 
         plus_eq: plus_eq {
