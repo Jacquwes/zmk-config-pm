@@ -434,7 +434,7 @@
             bindings = <&kp EXCLAMATION>, <&kp QUESTION>;
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        }
+        };
 
         // <= sans shift, >= avec shift
         LteGte: LteGte {
