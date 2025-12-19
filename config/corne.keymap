@@ -210,6 +210,13 @@
             label = "ARROW";
         };
 
+        arrow_double: arrow_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+            label = "ARROW";
+        };
+
         plus_eq: plus_eq {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -369,6 +376,12 @@
 
     behaviors {
 
+        Arrows: Arrows {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&arrow>, <&arrow_double>;
+        };
+
         hm: HomerowMods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT";
@@ -517,7 +530,7 @@
         french {
             bindings = <
   &e_acute    &e_grave     &e_circ         &a_grave       &c_cedille   &guillemet_open   &guillemet_close   &ae_ligature   &oe_ligature   &euro
-  &u_grave    &i_circ      &o_circ         &kp BACKSLASH  &trans       &degree           &micro             &trans         &trans         &trans
+  &u_grave    &i_circ      &o_circ         &trans         &trans       &degree           &micro             &trans         &trans         &trans
   &i_trema    &u_trema     &trans          &trans         &trans       &trans            &trans             &trans         &trans         &trans
                            &trans          &trans         &trans       &trans            &trans             &trans
             >;
