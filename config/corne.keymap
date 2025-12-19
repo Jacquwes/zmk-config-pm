@@ -497,7 +497,7 @@
         base {
             bindings = <
   &kp F       &kp P        &kp D           &kp L          &kp X        &ExclQuest   &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
-  &hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &CommaScoln  &hm RSHIFT A   &hm RCTRL E   &hm RALT I           &hm RGUI C
+  &hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &CommaScoln  &hm RSHIFT A   &hm RCTRL E   &hm LALT I           &hm RGUI C
   &kp V       &kp W        &kp G           &kp M          &kp J        &MinusPlus   &kp U          &kp O         &kp Y                &kp B
                            &lt 3 BSPC      &lt 1 R        &lt 4 DEL    &lt 2 BSPC   &lt 1 SPACE    &lt 3 RET
             >;
