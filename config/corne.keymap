@@ -428,6 +428,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        ExclQuest: ExclQuest {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUSPLUS";
+            bindings = <&kp EXCLAMATION>, <&kp QUESTION>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }
+
         // <= sans shift, >= avec shift
         LteGte: LteGte {
             compatible = "zmk,behavior-mod-morph";
@@ -488,7 +496,7 @@
         // Layer 0: BASE
         base {
             bindings = <
-  &kp F       &kp P        &kp D           &kp L          &kp X        &HashDllr    &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
+  &kp F       &kp P        &kp D           &kp L          &kp X        &ExclQuest   &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
   &hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &CommaScoln  &hm RSHIFT A   &hm RCTRL E   &hm RALT I           &hm RGUI C
   &kp V       &kp W        &kp G           &kp M          &kp J        &MinusPlus   &kp U          &kp O         &kp Y                &kp B
                            &lt 3 BSPC      &lt 1 R        &lt 4 DEL    &lt 2 BSPC   &lt 1 SPACE    &lt 3 RET
@@ -498,10 +506,10 @@
         // Layer 1: SYM
         sym {
             bindings = <
-  &kp EXCL    &kp AT       &mt &pair_brace LBRC   &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
+  &kp HASH    &kp AT       &mt &pair_brace LBRC   &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
   &trem_space &kp AMPS     &mt &pair_paren LPAR   &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
   &kp GRAVE   &kp TILDE    &mt &pair_bracket LBKT &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
-                           &trans                 &trans         &trans       &code_block  &kp UNDERSCORE &or_eq
+                           &trans                 &trans         &trans       &code_block  &kp UNDERSCORE &kp DOLLAR
             >;
         };
 
