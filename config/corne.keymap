@@ -305,21 +305,24 @@
         c_cedille: c_cedille {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp COMMA>;
+            bindings = 
+                <&macro_press &kp RALT>,
+                <&macro_tap &kp COMMA>,
+                <&macro_release &kp RALT>;
             label = "C_CEDILLE";
         };
         
         i_trema: i_trema {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DQT &kp SPACE &kp I>;
+            bindings = <&kp DQT &kp I>;
             label = "I_TREMA";
         };
         
         u_trema: u_trema {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DQT &kp SPACE &kp U>;
+            bindings = <&kp DQT &kp U>;
             label = "U_TREMA";
         };
 
@@ -327,49 +330,70 @@
         guillemet_open: guillemet_open {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp LBKT>;
+            bindings =
+                <&macro_press &kp RALT>,
+                <&macro_tap &kp LBKT>,
+                <&macro_release &kp RALT>;
             label = "GUILLEMET_OPEN";
         };
         
         guillemet_close: guillemet_close {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp RBKT>;
+            bindings =
+                <&macro_press &kp RALT>,
+                <&macro_tap &kp RBKT>,
+                <&macro_release &kp RALT>;
             label = "GUILLEMET_CLOSE";
         };
         
         ae_ligature: ae_ligature {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp Z>;
+            bindings =
+                <&macro_press &kp RALT>,
+                <&macro_tap &kp Z>,
+                <&macro_release &kp RALT>;
             label = "AE_LIGATURE";
         };
         
         oe_ligature: oe_ligature {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp O>;
+            bindings =
+                <&macro_press &kp RALT>,
+                <&macro_tap &kp k>,
+                <&macro_release &kp RALT>;
             label = "OE_LIGATURE";
         };
         
         euro: euro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp N5>;
+            bindings =
+                <&macro_press &kp RALT>,
+                <&macro_tap &kp N5>,
+                <&macro_release &kp RALT>;
             label = "EURO";
         };
         
         degree: degree {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp LS(N0)>;
+            bindings =
+                <&macro_press &kp RALT &kp RSHFT>,
+                <&macro_tap &kp SEMICOLON>,
+                <&macro_release &kp RALT &kp RSHFT>;
             label = "DEGREE";
         };
 
         micro: micro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RALT &kp M>;
+            bindings =
+                <&macro_press &kp RALT>,
+                <&macro_tap &kp M>,
+                <&macro_release &kp RALT>;
             label = "MICRO";
         };
     };
