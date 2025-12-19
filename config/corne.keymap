@@ -117,7 +117,18 @@
                 <&kp CARET &kp SPACE>;
             label = "TREM_SPACE";
         };
-    
+  
+        grave_space: grave_space {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+                <&macro_tap>,
+                <&kp GRAVE &kp SPACE>;
+            label = "GRAVE_SPACE";
+        };
+
         t_pairDquo: t_pairDquo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -543,9 +554,9 @@
         // Layer 1: SYM
         sym {
             bindings = <
-  &kp HASH    &kp AT       &mt &pair_brace LBRC   &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
-  &trem_space &kp AMPS     &mt &pair_paren LPAR   &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
-  &kp GRAVE   &kp TILDE    &mt &pair_bracket LBKT &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
+  &kp HASH      &kp AT     &mt &pair_brace LBRC   &kp RBRC       &kp PIPE     &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
+  &trem_space   &kp AMPS   &mt &pair_paren LPAR   &kp RPAR       &kp EQUAL    &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
+  &grave_space  &kp TILDE  &mt &pair_bracket LBKT &kp RBKT       &kp PRCNT    &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
                            &trans                 &trans         &trans       &code_block  &kp UNDERSCORE &kp DOLLAR
             >;
         };
