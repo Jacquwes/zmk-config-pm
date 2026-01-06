@@ -1,0 +1,119 @@
+a_grave: a_grave {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp GRAVE &kp A>;
+	label = "A_GRAVE";
+};
+
+e_acute: e_acute {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp SQT &kp E>;
+	label = "E_ACUTE";
+};
+
+e_grave: e_grave {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp GRAVE &kp E>;
+	label = "E_GRAVE";
+};
+
+e_circ: e_circ {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp CARET &kp E>;
+	label = "E_CIRC";
+};
+
+u_grave: u_grave {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp GRAVE &kp U>;
+	label = "U_GRAVE";
+};
+
+i_circ: i_circ {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp CARET &kp I>;
+	label = "I_CIRC";
+};
+
+o_circ: o_circ {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp CARET &kp O>;
+	label = "O_CIRC";
+};
+
+c_cedille: c_cedille {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp COMMA>;
+	label = "C_CEDILLE";
+};
+
+i_trema: i_trema {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp DQT &kp SPACE &kp I>;
+	label = "I_TREMA";
+};
+
+u_trema: u_trema {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp DQT &kp SPACE &kp U>;
+	label = "U_TREMA";
+};
+
+// Symboles spéciaux
+guillemet_open: guillemet_open {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp LBKT>;
+	label = "GUILLEMET_OPEN";
+};
+
+guillemet_close: guillemet_close {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp RBKT>;
+	label = "GUILLEMET_CLOSE";
+};
+
+ae_ligature: ae_ligature {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp Z>;
+	label = "AE_LIGATURE";
+};
+
+oe_ligature: oe_ligature {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp O>;
+	label = "OE_LIGATURE";
+};
+
+euro: euro {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp N5>;
+	label = "EURO";
+};
+
+degree: degree {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp LS(N0)>;
+	label = "DEGREE";
+};
+
+micro: micro {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp RALT &kp M>;
+	label = "MICRO";
+};
