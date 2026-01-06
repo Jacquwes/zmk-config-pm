@@ -118,6 +118,13 @@ macros {
 		label = "ARROW";
 	};
 	
+	arrow_double: arrow_double {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&kp EQUAL &kp GT>;
+		label = "ARROW_DOUBLE";
+	};
+	
 	plus_eq: plus_eq {
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
