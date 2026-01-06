@@ -152,6 +152,28 @@ macros {
 		bindings = <&kp PIPE &kp EQUAL>;
 		label = "OR_EQ";
 	};
-
+	
+	grave_space: grave_space {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings =
+		<&macro_release>,
+		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+		<&macro_tap>,
+		<&kp GRAVE &kp SPACE>;
+		label = "GRAVE_SPACE";
+	};
+	
+	tilde_space: tilde_space {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings =
+		<&macro_release>,
+		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
+		<&macro_tap>,
+		<&kp TILDE &kp SPACE>;
+		label = "TILDE_SPACE";
+	};
+	
 	#include "french.dtsi"
 };

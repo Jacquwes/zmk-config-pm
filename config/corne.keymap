@@ -154,6 +154,15 @@
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		
+		ExclQuest: ExclQuest {
+			compatible = "zmk,behavior-mod-morph";
+			label = "EXCLQUEST";
+			bindings = <&kp EXCLAMATION>, <&kp QUESTION>;
+			#binding-cells = <0>;
+			mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		
+		
 		#define hold_tap_config \
 		compatible = "zmk,behavior-hold-tap"; \
 		#binding-cells = <2>; \
@@ -197,22 +206,28 @@
 			bindings = <&squo_space>, <&kp GT>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-
-        pair_brace_b: pair_brace_b {
-            hold_tap_config;
-            bindings = <&pair_brace>, <&kp LBRC>;
-        };
-
-        pair_paren_b: pair_paren_b {
-            hold_tap_config;
-            bindings = <&pair_paren>, <&kp LPAR>;
-        };
-
-        pair_bracket_b: pair_bracket_b {
-            hold_tap_config;
-            bindings = <&pair_bracket>, <&kp LBKT>;
-        };
-
+		
+		Arrows: Arrows {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			bindings = <&arrow>, <&arrow_double>;
+		};
+		
+		pair_brace_b: pair_brace_b {
+			hold_tap_config;
+			bindings = <&pair_brace>, <&kp LBRC>;
+		};
+		
+		pair_paren_b: pair_paren_b {
+			hold_tap_config;
+			bindings = <&pair_paren>, <&kp LPAR>;
+		};
+		
+		pair_bracket_b: pair_bracket_b {
+			hold_tap_config;
+			bindings = <&pair_bracket>, <&kp LBKT>;
+		};
+		
 	};
 	
 	keymap {
@@ -221,7 +236,7 @@
 		// Layer 0: BASE
 		base {
 			bindings = <
-			&kp F       &kp P        &kp D           &kp L          &kp X        &HashDllr    &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
+			&kp F       &kp P        &kp D           &kp L          &kp X        &ExclQuest    &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
 			&hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &CommaScoln  &hm RSHIFT A   &hm RCTRL E   &hm RALT I           &hm RGUI C
 			&kp V       &kp W        &kp G           &kp M          &kp J        &MinusPlus   &kp U          &kp O         &kp Y                &kp B
 			&lt 3 BSPC  &lt 1 R      &lt 4 DEL       &lt 2 BSPC     &lt 1 SPACE  &lt 3 RET
@@ -231,9 +246,9 @@
 		// Layer 1: SYM
 		sym {
 			bindings = <
-			&kp EXCL    &kp AT       &pair_brace_b      0 0 &kp RBRC       &kp PIPE         &arrow       &kp N7         &kp N8        &kp N9               &plus_eq
-			&trem_space &kp AMPS     &pair_paren_b      0 0 &kp RPAR       &kp EQUAL        &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
-			&kp GRAVE   &kp TILDE    &pair_bracket_b    0 0 &kp RBKT       &kp PRCNT        &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
+			&kp EXCL      &kp AT        &pair_brace_b      0 0 &kp RBRC       &kp PIPE         &Arrows      &kp N7         &kp N8        &kp N9               &plus_eq
+			&trem_space   &kp AMPS      &pair_paren_b      0 0 &kp RPAR       &kp EQUAL        &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
+			&grave_space  &tilde_space  &pair_bracket_b    0 0 &kp RBKT       &kp PRCNT        &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
 			&trans      &trans       &trans                 &code_block    &kp UNDERSCORE   &or_eq
 			>;
 		};
