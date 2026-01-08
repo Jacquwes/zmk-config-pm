@@ -1,186 +1,87 @@
+#define def_macro(name, ...) \
+name: name { \
+	compatible = "zmk,behavior-macro"; \
+	#binding-cells = <0>; \
+	bindings = <__VA_ARGS__>; \
+}
+
+#define RELEASE_ALL \
+&macro_release, \
+&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI, \
+&macro_tap
+
 macros {
-	dquo_space: dquo_space {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-		<&macro_tap>,
-		<&kp DQT &kp SPACE>;
-		label = "DQUO_SPACE";
-	};
+	// Quote/space macros
+	def_macro(m_dquo_space,
+	RELEASE_ALL,
+	&kp DQT &kp SPACE
+	);
 	
-	squo_space: squo_space {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-		<&macro_tap>,
-		<&kp SQT &kp SPACE>;
-		label = "SQUO_SPACE";
-	};
+	def_macro(m_squo_space,
+	RELEASE_ALL,
+	&kp SQT &kp SPACE
+	);
 	
-	trem_space: trem_space {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-		<&macro_tap>,
-		<&kp CARET &kp SPACE>;
-		label = "TREM_SPACE";
-	};
+	def_macro(m_trem_space,
+	RELEASE_ALL,
+	&kp CARET &kp SPACE
+	);
 	
-	t_pairDquo: t_pairDquo {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-		<&macro_tap>,
-		<&kp DQT &kp SPACE &kp DQT &kp SPACE &kp LEFT>;
-		label = "T_PAIRDQUO";
-	};
+	def_macro(m_grave_space,
+	RELEASE_ALL,
+	&kp GRAVE &kp SPACE
+	);
 	
-	t_pairSquo: t_pairSquo {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
-		<&macro_tap>,
-		<&kp SQT &kp SPACE &kp SQT &kp SPACE &kp LEFT>;
-		label = "T_PAIRSQUO";
-	};
+	def_macro(m_tilde_space,
+	RELEASE_ALL,
+	&kp TILDE &kp SPACE
+	);
 	
-	t_pairLtGt: t_pairLtGt {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
-		<&macro_tap>,
-		<&kp LT &kp GT &kp LEFT>;
-		label = "T_PAIRLTGT";
-	};
+	// Pair macros with spacing
+	def_macro(m_t_pairDquo,
+	RELEASE_ALL,
+	&kp DQT &kp SPACE &kp DQT &kp SPACE &kp LEFT
+	);
 	
-	// Paires de délimiteurs
-	pair_paren: pair_paren {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
-		<&macro_tap>,
-		<&kp LPAR &kp RPAR &kp LEFT>;
-		label = "PAIR_PAREN";
-	};
+	def_macro(m_t_pairSquo,
+	RELEASE_ALL,
+	&kp SQT &kp SPACE &kp SQT &kp SPACE &kp LEFT
+	);
 	
-	pair_brace: pair_brace {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
-		<&macro_tap>,
-		<&kp LBRC &kp RBRC &kp LEFT>;
-		label = "PAIR_BRACE";
-	};
+	def_macro(m_t_pairLtGt,
+	RELEASE_ALL,
+	&kp LT &kp GT &kp LEFT
+	);
 	
-	pair_bracket: pair_bracket {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
-		<&macro_tap>,
-		<&kp LBKT &kp RBKT &kp LEFT>;
-		label = "PAIR_BRACKET";
-	};
+	// Basic pairs
+	def_macro(m_pair_paren,
+	RELEASE_ALL,
+	&kp LPAR &kp RPAR &kp LEFT
+	);
 	
-	code_block: code_block {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LEFT_WIN &kp RWIN>,
-		<&macro_tap>,
-		<&kp LBRC &kp RET &kp RET &kp RBRC &kp UP &kp END &kp TAB>;
-		label = "CODE_BLOCK";
-	};
+	def_macro(m_pair_brace,
+	RELEASE_ALL,
+	&kp LBRC &kp RBRC &kp LEFT
+	);
 	
-	arrow: arrow {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings = <&kp MINUS &kp GT>;
-		label = "ARROW";
-	};
+	def_macro(m_pair_bracket,
+	RELEASE_ALL,
+	&kp LBKT &kp RBKT &kp LEFT
+	);
 	
-	arrow_double: arrow_double {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings = <&kp EQUAL &kp GT>;
-		label = "ARROW_DOUBLE";
-	};
+	def_macro(m_code_block,
+	RELEASE_ALL,
+	&kp LBRC &kp RET &kp RET &kp RBRC &kp UP &kp END &kp TAB
+	);
 	
-	plus_eq: plus_eq {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings = <&kp PLUS &kp EQUAL>;
-		label = "PLUS_EQ";
-	};
-	
-	minus_eq: minus_eq {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings = <&kp MINUS &kp EQUAL>;
-		label = "MINUS_EQ";
-	};
-	
-	lte: lte {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings = <&kp LT &kp EQUAL>;
-		label = "LTE";
-	};
-	
-	gte: gte {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings = <&kp GT &kp EQUAL>;
-		label = "GTE";
-	};
-	
-	or_eq: or_eq {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings = <&kp PIPE &kp EQUAL>;
-		label = "OR_EQ";
-	};
-	
-	grave_space: grave_space {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-		<&macro_tap>,
-		<&kp GRAVE &kp SPACE>;
-		label = "GRAVE_SPACE";
-	};
-	
-	tilde_space: tilde_space {
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings =
-		<&macro_release>,
-		<&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI>,
-		<&macro_tap>,
-		<&kp TILDE &kp SPACE>;
-		label = "TILDE_SPACE";
-	};
+	// Programming symbols
+	def_macro(m_arrow, &kp MINUS &kp GT);
+	def_macro(m_arrow_double, &kp EQUAL &kp GT);
+	def_macro(m_plus_eq, &kp PLUS &kp EQUAL);
+	def_macro(m_minus_eq, &kp MINUS &kp EQUAL);
+	def_macro(m_lte, &kp LT &kp EQUAL);
+	def_macro(m_gte, &kp GT &kp EQUAL);
+	def_macro(m_or_eq, &kp PIPE &kp EQUAL);
 	
 	#include "french.dtsi"
 };

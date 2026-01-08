@@ -1,143 +1,66 @@
-a_grave: a_grave {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp GRAVE &kp A>;
-	label = "A_GRAVE";
-};
+#define def_macro(name, ...) \
+name: name { \
+	compatible = "zmk,behavior-macro"; \
+	#binding-cells = <0>; \
+	bindings = <__VA_ARGS__>; \
+}
 
-e_acute: e_acute {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp SQT &kp E>;
-	label = "E_ACUTE";
-};
+// French accents
+def_macro(m_a_grave, &kp GRAVE &kp A);
+def_macro(m_e_acute, &kp SQT &kp E);
+def_macro(m_e_grave, &kp GRAVE &kp E);
+def_macro(m_e_circ, &kp CARET &kp E);
+def_macro(m_u_grave, &kp GRAVE &kp U);
+def_macro(m_i_circ, &kp CARET &kp I);
+def_macro(m_o_circ, &kp CARET &kp O);
+def_macro(m_i_trema, &kp DQT &kp I);
+def_macro(m_u_trema, &kp DQT &kp U);
 
-e_grave: e_grave {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp GRAVE &kp E>;
-	label = "E_GRAVE";
-};
+def_macro(m_c_cedille,
+	&macro_press &kp RALT,
+	&macro_tap &kp COMMA,
+	&macro_release &kp RALT
+);
 
-e_circ: e_circ {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp CARET &kp E>;
-	label = "E_CIRC";
-};
+// Special symbols
+def_macro(m_guillemet_open,
+	&macro_press &kp RALT,
+	&macro_tap &kp LBKT,
+	&macro_release &kp RALT
+);
 
-u_grave: u_grave {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp GRAVE &kp U>;
-	label = "U_GRAVE";
-};
+def_macro(m_guillemet_close,
+	&macro_press &kp RALT,
+	&macro_tap &kp RBKT,
+	&macro_release &kp RALT
+);
 
-i_circ: i_circ {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp CARET &kp I>;
-	label = "I_CIRC";
-};
+def_macro(m_ae_ligature,
+	&macro_press &kp RALT,
+	&macro_tap &kp Z,
+	&macro_release &kp RALT
+);
 
-o_circ: o_circ {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp CARET &kp O>;
-	label = "O_CIRC";
-};
+def_macro(m_oe_ligature,
+	&macro_press &kp RALT,
+	&macro_tap &kp K,
+	&macro_release &kp RALT
+);
 
-c_cedille: c_cedille {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT>,
-	<&macro_tap &kp COMMA>,
-	<&macro_release &kp RALT>;
-	label = "C_CEDILLE";
-};
+def_macro(m_euro,
+	&macro_press &kp RALT,
+	&macro_tap &kp N5,
+	&macro_release &kp RALT
+);
 
-i_trema: i_trema {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp DQT &kp I>;
-	label = "I_TREMA";
-};
+def_macro(m_degree,
+	&macro_press &kp RALT &kp RSHFT,
+	&macro_tap &kp SEMICOLON,
+	&macro_release &kp RALT &kp RSHFT
+);
 
-u_trema: u_trema {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings = <&kp DQT &kp U>;
-	label = "U_TREMA";
-};
-
-// Symboles spéciaux
-guillemet_open: guillemet_open {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT>,
-	<&macro_tap &kp LBKT>,
-	<&macro_release &kp RALT>;
-	label = "GUILLEMET_OPEN";
-};
-
-guillemet_close: guillemet_close {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT>,
-	<&macro_tap &kp RBKT>,
-	<&macro_release &kp RALT>;
-	label = "GUILLEMET_CLOSE";
-};
-
-ae_ligature: ae_ligature {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT>,
-	<&macro_tap &kp Z>,
-	<&macro_release &kp RALT>;
-	label = "AE_LIGATURE";
-};
-
-oe_ligature: oe_ligature {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT>,
-	<&macro_tap &kp K>,
-	<&macro_release &kp RALT>;
-	label = "OE_LIGATURE";
-};
-
-euro: euro {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT>,
-	<&macro_tap &kp N5>,
-	<&macro_release &kp RALT>;
-	label = "EURO";
-};
-
-degree: degree {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT &kp RSHFT>,
-	<&macro_tap &kp SEMICOLON>,
-	<&macro_release &kp RALT &kp RSHFT>;
-	label = "DEGREE";
-};
-
-micro: micro {
-	compatible = "zmk,behavior-macro";
-	#binding-cells = <0>;
-	bindings =
-	<&macro_press &kp RALT>,
-	<&macro_tap &kp M>,
-	<&macro_release &kp RALT>;
-	label = "MICRO";
-};
+def_macro(m_micro,
+	&macro_press &kp RALT,
+	&macro_tap &kp M,
+	&macro_release &kp RALT
+);

@@ -1,0 +1,56 @@
+#define def_morph_shift(name, released, held) \
+name: name { \
+	compatible = "zmk,behavior-mod-morph"; \
+	bindings = <released>, <held>; \
+	#binding-cells = <0>; \
+	mods = <(MOD_RSFT|MOD_LSFT)>; \
+}
+
+#define def_hold_tap(name, tap, hold) \
+name: name { \
+	compatible = "zmk,behavior-hold-tap"; \
+	#binding-cells = <2>; \
+	tapping-term-ms = <200>; \
+	flavor = "tap-preferred"; \
+	bindings = <hold>, <tap>; \
+}
+
+#define def_tap_dance(name, binding1, binding2) \
+name: name { \
+	compatible = "zmk,behavior-tap-dance"; \
+	#binding-cells = <0>; \
+	bindings = <binding1>, <binding2>; \
+}
+
+behaviors {
+	b_hm: b_hm {
+		compatible = "zmk,behavior-hold-tap";
+		label = "HOMEROW_MODS_LEFT";
+		#binding-cells = <2>;
+		flavor = "balanced";
+		hold-trigger-on-release;
+		tapping-term-ms = <200>;
+		quick-tap-ms = <55>;
+		bindings = <&kp>, <&kp>;
+	};
+	
+	def_morph_shift(b_CommaScoln, &kp COMMA, &kp SEMICOLON);
+	def_morph_shift(b_DotColn, &kp DOT, &kp COLON);
+	def_morph_shift(b_SlshStar, &kp FSLH, &kp STAR);
+	def_morph_shift(b_HashDllr, &kp HASH, &kp DOLLAR);
+	def_morph_shift(b_MinusPlus, &kp MINUS, &kp PLUS);
+	def_morph_shift(b_LteGte, &lte, &gte);
+	def_morph_shift(b_ExclQuest, &kp EXCLAMATION, &kp QUESTION);
+	def_morph_shift(b_pairDquoLt, &t_pairDquo, &t_pairLtGt);
+	def_morph_shift(b_DquotLt, &dquo_space, &kp LT);
+	def_morph_shift(b_pairSquoGt, &t_pairSquo, &kp GT);
+	def_morph_shift(b_SquotGT, &squo_space, &kp GT);
+	
+	def_tap_dance(b_Arrows, &arrow, &arrow_double);
+	
+	def_hold_tap(b_DoubleQuotesLt, &b_pairDquoLt, &b_DquotLt);
+	def_hold_tap(b_SingleQuoteGt, &b_pairSquoGt, &b_SquotGT);
+	def_hold_tap(b_pair_brace, &pair_brace, &kp LBRC);
+	def_hold_tap(b_pair_paren, &pair_paren, &kp LPAR);
+	def_hold_tap(b_pair_bracket, &pair_bracket, &kp LBKT);
+};
