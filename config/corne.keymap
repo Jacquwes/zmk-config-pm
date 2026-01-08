@@ -90,51 +90,51 @@
 		
 		// Layer 0: BASE
 		base {
-			bindings = <
-			&kp F       &kp P        &kp D           &kp L          &kp X        &ExclQuest   &DotColn       &SlshStar     &DoubleQuotesLt 0 0  &SingleQuoteGt 0 0
-			&hm LGUI S  &hm LALT N   &hm LCTRL T     &hm LSHIFT H   &kp K        &CommaScoln  &hm RSHIFT A   &hm RCTRL E   &hm RALT I           &hm RGUI C
-			&kp V       &kp W        &kp G           &kp M          &kp J        &MinusPlus   &kp U          &kp O         &kp Y                &kp B
-			&lt 3 BSPC  &lt 1 R      &lt 4 DEL       &lt 2 BSPC     &lt 1 SPACE  &lt 3 RET
+			bindings = 
+			&kp F            &kp P            &kp D                &kp L              &kp X              &b_ExclQuest         &b_DotColn           &b_SlshStar          &b_DoubleQuotesLt 0 0    &b_SingleQuoteGt 0 0
+			&b_hm LGUI S     &b_hm LALT N     &b_hm LCTRL T        &b_hm LSHIFT H     &kp K              &b_CommaScoln        &b_hm RSHIFT A       &b_hm RCTRL E        &b_hm RALT I             &b_hm RGUI C
+			&kp V            &kp W            &kp G                &kp M              &kp J              &b_MinusPlus         &kp U                &kp O                &kp Y                    &kp B
+			                                  &lt 3 BSPC           &lt 1 R            &lt 4 DEL          &lt 2 BSPC           &lt 1 SPACE          &lt 3 RET
 			>;
 		};
-		
+
 		// Layer 1: SYM
 		sym {
-			bindings = <
-			&kp EXCL      &kp AT        &pair_brace_b      0 0 &kp RBRC       &kp PIPE         &Arrows      &kp N7         &kp N8        &kp N9               &plus_eq
-			&trem_space   &kp AMPS      &pair_paren_b      0 0 &kp RPAR       &kp EQUAL        &kp STAR     &kp N4         &kp N5        &kp N6               &minus_eq
-			&grave_space  &tilde_space  &pair_bracket_b    0 0 &kp RBKT       &kp PRCNT        &kp N0       &kp N1         &kp N2        &kp N3               &LteGte
-			&trans      &trans       &trans                 &code_block    &kp UNDERSCORE   &or_eq
+			bindings = 
+			&kp EXCL         &kp AT           &b_pair_brace 0 0    &kp RBRC           &kp PIPE           &b_Arrows            &kp N7               &kp N8               &kp N9                   &m_plus_eq
+			&m_trem_space    &kp AMPS         &b_pair_paren 0 0    &kp RPAR           &kp EQUAL          &kp STAR             &kp N4               &kp N5               &kp N6                   &m_minus_eq
+			&m_grave_space   &m_tilde_space   &b_pair_bracket 0 0  &kp RBKT           &kp PRCNT          &kp N0               &kp N1               &kp N2               &kp N3                   &b_LteGte
+			                                  &trans               &trans             &trans             &m_code_block        &kp UNDERSCORE       &m_or_eq
 			>;
 		};
 		
 		// Layer 2: FRENCH
 		french {
-			bindings = <
-			&e_acute    &e_grave     &e_circ         &a_grave       &c_cedille   &guillemet_open   &guillemet_close   &ae_ligature   &oe_ligature   &euro
-			&u_grave    &i_circ      &o_circ         &kp BACKSLASH  &trans       &degree           &micro             &trans         &trans         &trans
-			&i_trema    &u_trema     &trans          &trans         &trans       &trans            &trans             &trans         &trans         &trans
-			&trans          &trans         &trans       &trans            &trans             &trans
+			bindings = 
+			&m_e_acute       &m_e_grave       &m_e_circ            &m_a_grave         &m_c_cedille       &m_guillemet_open    &m_guillemet_close   &m_ae_ligature       &m_oe_ligature           &m_euro
+			&m_u_grave       &m_i_circ        &m_o_circ            &kp BACKSLASH      &trans             &m_degree            &m_micro             &trans               &trans                   &trans
+			&m_i_trema       &m_u_trema       &trans               &trans             &trans             &trans               &trans               &trans               &trans                   &trans
+			                                  &trans               &trans             &trans             &trans               &trans               &trans
 			>;
 		};
 		
 		// Layer 3: NAV
 		nav {
-			bindings = <
-			&trans      &trans       &trans          &caps_word     &trans       &trans       &trans         &trans        &trans         &kp INS
-			&kp LGUI    &kp LALT     &kp LCTRL       &kp LSHIFT     &trans       &trans       &kp LEFT       &kp DOWN      &kp UP         &kp RIGHT
-			&trans      &trans       &trans          &trans         &trans       &trans       &kp HOME       &kp PG_DN     &kp PG_UP      &kp END
-			&trans          &trans         &trans       &kp ESC      &kp TAB        &trans
+			bindings = 
+			&trans           &trans           &trans               &caps_word         &trans             &trans               &trans               &trans               &trans                   &kp INS
+			&kp LGUI         &kp LALT         &kp LCTRL            &kp LSHIFT         &trans             &trans               &kp LEFT             &kp DOWN             &kp UP                   &kp RIGHT
+			&trans           &trans           &trans               &trans             &trans             &trans               &kp HOME             &kp PG_DN            &kp PG_UP                &kp END
+			                                  &trans               &trans             &trans             &kp ESC              &kp TAB              &trans
 			>;
 		};
 		
 		// Layer 4: MEDIA
 		media {
-			bindings = <
-			&kp F1       &kp F2       &kp F3       &kp F4          &kp F5         &kp F6       &kp F7         &kp F8        &kp F9         &kp F10
-			&bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &bt BT_CLR     &kp F11      &kp C_PREV     &kp C_VOL_DN  &kp C_VOL_UP   &kp C_NEXT
-			&trans       &trans       &trans       &trans          &studio_unlock &kp F12      &kp C_BRI_DN   &kp C_BRI_UP  &kp C_MUTE     &kp C_PP
-			&trans       &trans          &trans         &trans       &trans         &trans
+			bindings = 
+			&kp F1           &kp F2           &kp F3               &kp F4             &kp F5             &kp F6               &kp F7               &kp F8               &kp F9                   &kp F10
+			&bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3         &bt BT_SEL 4       &bt BT_CLR         &kp F11              &kp C_PREV           &kp C_VOL_DN         &kp C_VOL_UP             &kp C_NEXT
+			&trans           &trans           &trans               &trans             &studio_unlock     &kp F12              &kp C_BRI_DN         &kp C_BRI_UP         &kp C_MUTE               &kp C_PP
+			                                  &trans               &trans             &trans             &trans               &trans               &trans
 			>;
 		};
 	};
