@@ -41,16 +41,12 @@ behaviors {
 	def_morph_shift(b_MinusPlus, &kp MINUS, &kp PLUS);
 	def_morph_shift(b_LteGte, &lte, &gte);
 	def_morph_shift(b_ExclQuest, &kp EXCLAMATION, &kp QUESTION);
-	def_morph_shift(b_pairDquoLt, &t_pairDquo, &t_pairLtGt);
-	def_morph_shift(b_DquotLt, &dquo_space, &kp LT);
-	def_morph_shift(b_pairSquoGt, &t_pairSquo, &kp GT);
-	def_morph_shift(b_SquotGT, &squo_space, &kp GT);
 	
 	def_tap_dance(b_Arrows, &arrow, &arrow_double);
 	
-	def_hold_tap(b_DoubleQuotesLt, &b_pairDquoLt, &b_DquotLt);
-	def_hold_tap(b_SingleQuoteGt, &b_pairSquoGt, &b_SquotGT);
-	def_hold_tap(b_pair_brace, &pair_brace, &kp LBRC);
-	def_hold_tap(b_pair_paren, &pair_paren, &kp LPAR);
-	def_hold_tap(b_pair_bracket, &pair_bracket, &kp LBKT);
+    def_hold_tap(b_pair_dquo, &kp DOUBLE_QUOTES, &m_dquo_space);
+    def_hold_tap(b_pair_squo, &kp SINGLE_QUOTE, &m_squo_space);
+	def_hold_tap(b_pair_brace, &kp LBRC, &m_pair_brace);
+	def_hold_tap(b_pair_paren, &kp LPAR, &m_pair_paren);
+	def_hold_tap(b_pair_bracket, &kp LBKT, &m_pair_bracket);
 };
