@@ -24,6 +24,12 @@
 			layers = <0>;
 		};
 		
+		comblo_block {
+			timeout-ms = <50>;
+			key-positions = <6 7>;
+			bindings = <&m_code_block>;
+			layers = <1>;
+		};	
 	};
 	
 	physical_layout_5col: physical_layout_5col {
