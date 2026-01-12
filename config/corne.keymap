@@ -129,7 +129,7 @@
 			&kp X            &kp N6           &kp N5               &kp N4             &kp PRCNT          &trans               &trans               &kp COMMA            &kp DOT                  &kp LEFT_GUI
 			                                  &trans               &trans             &trans             &trans               &kp N0               &tog 2
 			>;
-		}
+		};
 		
 		// Layer 3: FRENCH
 		french {
