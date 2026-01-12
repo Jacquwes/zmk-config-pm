@@ -51,7 +51,7 @@ behaviors {
 	
     def_hold_tap(b_pair_dquo, &m_dquo_space, &m_t_pairDquo);
     def_hold_tap(b_pair_squo, &m_squo_space, &m_t_pairSquo);
-	def_hold_tap(b_pair_brace, &kp LBRC, &m_pair_brace);
-	def_hold_tap(b_pair_paren, &kp LPAR, &m_pair_paren);
-	def_hold_tap(b_pair_bracket, &kp LBKT, &m_pair_bracket);
+	def_hold_tap(b_pair_brace, &kp, &m_pair_brace);
+	def_hold_tap(b_pair_paren, &kp, &m_pair_paren);
+	def_hold_tap(b_pair_bracket, &kp, &m_pair_bracket);
 };

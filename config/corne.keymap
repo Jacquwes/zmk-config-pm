@@ -114,10 +114,10 @@
 		// Layer 1: SYM
 		sym {
 			bindings = <
-			&m_grave_space   &kp LT           &kp GT               &kp MINUS          &kp PIPE           &m_trem_space        &b_pair_brace        &kp RBRC             &kp DOLLAR               &b_Arrows
-			&kp EXCLAMATION  &kp STAR         &kp SLASH            &kp EQUAL          &kp AMPERSAND      &kp HASH             &b_pair_paren        &kp RPAR             &kp SEMICOLON            &b_pair_dquo
-			&m_tilde_space   &kp PLUS         &b_pair_bracket      &kp RBKT           &kp PRCNT          &kp AT               &kp COLON            &kp COMMA            &kp DOT                  &b_pair_squo
-			                                  &trans               &trans             &trans             &trans               &kp UNDERSCORE       &caps_word
+			&m_grave_space   &kp LT           &kp GT                  &kp MINUS          &kp PIPE           &m_trem_space        &b_pair_brace LBRC 0 &kp RBRC             &kp DOLLAR               &b_Arrows
+			&kp EXCLAMATION  &kp STAR         &kp SLASH               &kp EQUAL          &kp AMPERSAND      &kp HASH             &b_pair_paren LPAR 0 &kp RPAR             &kp SEMICOLON            &b_pair_dquo
+			&m_tilde_space   &kp PLUS         &b_pair_bracket LBKT 0  &kp RBKT           &kp PRCNT          &kp AT               &kp COLON            &kp COMMA            &kp DOT                  &b_pair_squo
+			                                  &trans                  &trans             &trans             &trans               &kp UNDERSCORE       &caps_word
 			>;
 		};
 
