@@ -39,7 +39,6 @@ behaviors {
 	def_morph_shift(b_SlshStar, &kp FSLH, &kp STAR);
 	def_morph_shift(b_HashDllr, &kp HASH, &kp DOLLAR);
 	def_morph_shift(b_MinusPlus, &kp MINUS, &kp PLUS);
-	def_morph_shift(b_LteGte, &lte, &gte);
 	def_morph_shift(b_ExclQuest, &kp EXCLAMATION, &kp QUESTION);
 	def_morph_shift(b_BackspaceDelete, &kp BACKSPACE, &kp DELETE);
 
