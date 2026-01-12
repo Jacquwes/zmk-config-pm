@@ -29,7 +29,14 @@
 			key-positions = <6 7>;
 			bindings = <&m_code_block>;
 			layers = <1>;
-		};	
+		};
+
+		combo_fn {
+			timeout-ms = <50>;
+			key-positions = <15 16>;
+			bindings = <&lt 6>;
+			layers = <0>;
+		};
 	};
 	
 	physical_layout_5col: physical_layout_5col {
@@ -110,7 +117,7 @@
 			&m_grave_space   &kp LT           &kp GT               &kp MINUS          &kp PIPE           &m_trem_space        &b_pair_brace        &kp RBRC             &kp DOLLAR               &b_Arrows
 			&kp EXCLAMATION  &kp STAR         &kp SLASH            &kp EQUAL          &kp AMPERSAND      &kp HASH             &b_pair_paren        &kp RPAR             &kp SEMICOLON            &b_pair_dquo
 			&m_tilde_space   &kp PLUS         &b_pair_bracket      &kp RBKT           &kp PRCNT          &kp AT               &kp COLON            &kp COMMA            &kp DOT                  &b_pair_squo
-			                                  &trans               &trans             &trans             &trans               &kp UNDERSCORE       &trans
+			                                  &trans               &trans             &trans             &trans               &kp UNDERSCORE       &caps_word
 			>;
 		};
 
@@ -137,21 +144,31 @@
 		// Layer 4: NAV
 		nav {
 			bindings = <
-			&trans           &trans           &trans               &caps_word         &trans             &trans               &trans               &trans               &trans                   &kp INS
-			&kp LGUI         &kp LALT         &kp LCTRL            &kp LSHIFT         &trans             &trans               &kp LEFT             &kp DOWN             &kp UP                   &kp RIGHT
-			&trans           &trans           &trans               &trans             &trans             &trans               &kp HOME             &kp PG_DN            &kp PG_UP                &kp END
-			                                  &trans               &trans             &trans             &kp ESC              &kp TAB              &trans
+			&trans           &trans           &trans               &trans             &trans             &trans               &trans               &trans               &trans                   &trans
+			&kp LALT         &kp LCTRL        &kp LSHIFT           &trans             &trans             &trans               &kp LEFT             &kp DOWN             &kp UP                   &kp RIGHT
+			&kp LGUI         &trans           &trans               &trans             &trans             &trans               &kp HOME             &kp PG_DN            &kp PG_UP                &kp END
+			                                  &trans               &trans             &trans             &trans               &trans               &tog 4
 			>;
 		};
 		
 		// Layer 5: MEDIA
 		media {
 			bindings = <
-			&kp F1           &kp F2           &kp F3               &kp F4             &kp F5             &kp F6               &kp F7               &kp F8               &kp F9                   &kp F10
-			&bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3         &bt BT_SEL 4       &bt BT_CLR         &kp F11              &kp C_PREV           &kp C_VOL_DN         &kp C_VOL_UP             &kp C_NEXT
-			&trans           &trans           &trans               &trans             &studio_unlock     &kp F12              &kp C_BRI_DN         &kp C_BRI_UP         &kp C_MUTE               &kp C_PP
-			                                  &trans               &trans             &trans             &trans               &trans               &trans
+			&trans           &trans           &trans               &trans             &trans             &trans               &trans               &trans               &trans                   &trans
+			&kp LALT         &trans           &kp LSHIFT           &trans             &trans             &trans               &kp C_PREV           &kp C_VOL_DN         &kp C_VOL_UP             &kp C_NEXT
+			&kp LGUI         &trans           &trans               &kp LCTRL          &studio_unlock     &trans               &b_Bt1               &b_Bt2               &b_Bt3                   &b_Bt4
+			                                  &trans               &trans             &trans             &trans               &kp C_PP             &trans
 			>;
 		};
+
+		// Layer 6: FN
+		fn {
+			bindings = <
+			&kp F12          &kp F9           &kp F8               &kp F7             &trans             &trans               &trans               &trans               &trans                   &trans
+			&kp F10          &kp F3           &kp F2               &kp F1             &trans             &trans               &trans               &kp LSHIFT           &trans                   &kp LALT
+			&kp F11          &kp F6           &kp F5               &kp F4             &trans             &trans               &trans               &kp LCTRL            &trans                   &kp LWIN
+			                                  &trans               &trans             &trans             &trans               &trans               &trans
+			>;
+		}; 
 	};
 };

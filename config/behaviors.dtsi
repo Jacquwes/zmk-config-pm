@@ -41,6 +41,12 @@ behaviors {
 	def_morph_shift(b_MinusPlus, &kp MINUS, &kp PLUS);
 	def_morph_shift(b_LteGte, &lte, &gte);
 	def_morph_shift(b_ExclQuest, &kp EXCLAMATION, &kp QUESTION);
+	def_morph_shift(b_BackspaceDelete, &kp BACKSPACE, &kp DELETE);
+
+	def_morph_shift(b_Bt1, &bt BT_SEL 1, &m_clr_bt1);
+	def_morph_shift(b_Bt2, &bt BT_SEL 2, &m_clr_bt2);
+	def_morph_shift(b_Bt3, &bt BT_SEL 3, &m_clr_bt3);
+	def_morph_shift(b_Bt4, &bt BT_SEL 4, &m_clr_bt4);
 	
 	def_tap_dance(b_Arrows, &arrow, &arrow_double);
 	
