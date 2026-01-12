@@ -98,9 +98,9 @@
 		base {
 			bindings = <
 			&kp F            &kp P            &kp D                &kp L              &kp X              &b_ExclQuest         &b_DotColn           &b_SlshStar          &b_DoubleQuotesLt 0 0    &b_SingleQuoteGt 0 0
-			&b_hm LGUI S     &b_hm LALT N     &b_hm LCTRL T        &b_hm LSHIFT H     &kp K              &b_CommaScoln        &b_hm RSHIFT A       &b_hm RCTRL E        &b_hm RALT I             &b_hm RGUI C
-			&kp V            &kp W            &kp G                &kp M              &kp J              &b_MinusPlus         &kp U                &kp O                &kp Y                    &kp B
-			                                  &lt 3 BSPC           &lt 1 R            &lt 4 DEL          &lt 2 BSPC           &lt 1 SPACE          &lt 3 RET
+			&b_hm LEFT_ALT S &lt 1 N          &b_hm LSHIFT T       &lt 4 H		      &kp K              &b_CommaScoln        &lt 2 A              &b_hm RSHIFT E       &lt 1 I                  &b_hm RALT C
+			&kp V            &kp W            &kp G                &b_hm LCTRL M      &kp J              &b_MinusPlus         &b_hm RCTRL U        &kp O                &kp Y                    &b_hm RGUI B
+			                                  &lt 5 ESCAPE         &kp R              &kp TAB            &b_BackspaceDelete   &kp SPACE            &kp RET
 			>;
 		};
 
