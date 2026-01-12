@@ -5,75 +5,25 @@ name: name { \
 	bindings = <__VA_ARGS__>; \
 }
 
-#define RELEASE_ALL \
-&macro_release, \
-&kp LSHFT &kp RSHFT &kp LALT &kp RALT &kp LCTRL &kp RCTRL &kp LGUI &kp RGUI, \
-&macro_tap
-
 macros {
 	// Quote/space macros
-	def_macro(m_dquo_space,
-	RELEASE_ALL,
-	&kp DQT &kp SPACE
-	);
-	
-	def_macro(m_squo_space,
-	RELEASE_ALL,
-	&kp SQT &kp SPACE
-	);
-	
-	def_macro(m_trem_space,
-	RELEASE_ALL,
-	&kp CARET &kp SPACE
-	);
-	
-	def_macro(m_grave_space,
-	RELEASE_ALL,
-	&kp GRAVE &kp SPACE
-	);
-	
-	def_macro(m_tilde_space,
-	RELEASE_ALL,
-	&kp TILDE &kp SPACE
-	);
+	def_macro(m_dquo_space, &kp DQT &kp SPACE);
+	def_macro(m_squo_space, &kp SQT &kp SPACE);
+	def_macro(m_trem_space, &kp CARET &kp SPACE);
+	def_macro(m_grave_space, &kp GRAVE &kp SPACE);
+	def_macro(m_tilde_space, &kp TILDE &kp SPACE);
 	
 	// Pair macros with spacing
-	def_macro(m_t_pairDquo,
-	RELEASE_ALL,
-	&kp DQT &kp SPACE &kp DQT &kp SPACE &kp LEFT
-	);
-	
-	def_macro(m_t_pairSquo,
-	RELEASE_ALL,
-	&kp SQT &kp SPACE &kp SQT &kp SPACE &kp LEFT
-	);
-	
-	def_macro(m_t_pairLtGt,
-	RELEASE_ALL,
-	&kp LT &kp GT &kp LEFT
-	);
+	def_macro(m_t_pairDquo, &kp DQT &kp SPACE &kp DQT &kp SPACE &kp LEFT);
+	def_macro(m_t_pairSquo, &kp SQT &kp SPACE &kp SQT &kp SPACE &kp LEFT);
+	def_macro(m_t_pairLtGt, &kp LT &kp GT &kp LEFT);
 	
 	// Basic pairs
-	def_macro(m_pair_paren,
-	RELEASE_ALL,
-	&kp LPAR &kp RPAR &kp LEFT
-	);
-	
-	def_macro(m_pair_brace,
-	RELEASE_ALL,
-	&kp LBRC &kp RBRC &kp LEFT
-	);
-	
-	def_macro(m_pair_bracket,
-	RELEASE_ALL,
-	&kp LBKT &kp RBKT &kp LEFT
-	);
-	
-	def_macro(m_code_block,
-	RELEASE_ALL,
-	&kp LBRC &kp RET &kp RET &kp RBRC &kp UP &kp END &kp TAB
-	);
-	
+	def_macro(m_pair_paren, &kp LPAR &kp RPAR &kp LEFT);
+	def_macro(m_pair_brace, &kp LBRC &kp RBRC &kp LEFT);
+	def_macro(m_pair_bracket, &kp LBKT &kp RBKT &kp LEFT);
+	def_macro(m_code_block, &kp LBRC &kp RET &kp RET &kp RBRC &kp UP &kp END &kp TAB);
+
 	// Programming symbols
 	def_macro(m_arrow, &kp MINUS &kp GT);
 	def_macro(m_arrow_double, &kp EQUAL &kp GT);
@@ -82,7 +32,7 @@ macros {
 	def_macro(m_lte, &kp LT &kp EQUAL);
 	def_macro(m_gte, &kp GT &kp EQUAL);
 	def_macro(m_or_eq, &kp PIPE &kp EQUAL);
-
+	
 	// BT
 	def_macro(m_clr_bt1, &bt BT_SEL 1 &bt BT_CLR);
 	def_macro(m_clr_bt2, &bt BT_SEL 2 &bt BT_CLR);
