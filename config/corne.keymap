@@ -157,7 +157,7 @@
 			&trans           &trans           &trans               &trans             &trans             &trans               &trans               &trans               &trans                   &trans
 			&kp LALT         &trans           &kp LSHIFT           &trans             &trans             &trans               &kp C_PREV           &kp C_VOL_DN         &kp C_VOL_UP             &kp C_NEXT
 			&kp LGUI         &trans           &trans               &kp LCTRL          &studio_unlock     &trans               &b_Bt1               &b_Bt2               &b_Bt3                   &b_Bt4
-			                                  &trans               &trans             &trans             &trans               &kp C_PP             &trans
+			                                  &trans               &trans             &trans             &trans               &kp C_PP             &kp PRINTSCREEN
 			>;
 		};
 
