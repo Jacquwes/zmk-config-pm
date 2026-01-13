@@ -117,7 +117,7 @@
 			&m_grave_space   &kp LT           &kp GT                  &kp MINUS          &kp PIPE           &m_trem_space        &b_pair_brace 0 LBRC &kp RBRC             &kp DOLLAR               &b_Arrows
 			&kp EXCLAMATION  &kp STAR         &kp SLASH               &kp EQUAL          &kp AMPERSAND      &kp HASH             &b_pair_paren 0 LPAR &kp RPAR             &kp SEMICOLON            &b_pair_dquo 0 0
 			&m_tilde_space   &kp PLUS         &b_pair_bracket 0 LBKT  &kp RBKT           &kp PRCNT          &kp AT               &kp COLON            &kp COMMA            &kp DOT                  &b_pair_squo 0 0
-			                                  &trans                  &trans             &trans             &trans               &kp UNDERSCORE       &caps_word
+			                                  &kp BACKSLASH           &m_carriage_return &m_line_feed       &trans               &kp UNDERSCORE       &caps_word
 			>;
 		};
 

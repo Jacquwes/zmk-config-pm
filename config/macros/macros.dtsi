@@ -32,6 +32,8 @@ macros {
 	def_macro(m_lte, &kp LT &kp EQUAL);
 	def_macro(m_gte, &kp GT &kp EQUAL);
 	def_macro(m_or_eq, &kp PIPE &kp EQUAL);
+	def_macro(m_carriage_return, &kp BACKSLASH &kp R);
+	def_macro(m_line_feed, &kp BACKSLASH &kp N);
 	
 	// BT
 	def_macro(m_clr_bt1, &bt BT_SEL 1 &bt BT_CLR);
