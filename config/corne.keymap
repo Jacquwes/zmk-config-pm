@@ -37,6 +37,34 @@
 			bindings = <&mo 6>;
 			layers = <0>;
 		};
+
+		combo_grave {
+			timeout-ms = <50>;
+			key-positions = <6 7>;
+			bindings = <&kp GRAVE>;
+			layers = <0>;
+		};
+
+		combo_aigu {
+			timeout-ms = <50>;
+			key-positions = <7 8>;
+			bindings = <&kp SINGLE_QUOTE>;
+			layers = <0>;
+		};
+
+		combo_circonf {
+			timeout-ms = <50>;
+			key-positions = <6 7 8>;
+			bindings = <&kp CARET>;
+			layers = <0>;
+		};
+
+		combo_trem {
+			timeout-ms = <50>;
+			key-positions = <6 8>;
+			bindings = <&kp DOUBLE_QUOTES>;
+			layers = <0>;
+		};
 	};
 	
 	physical_layout_5col: physical_layout_5col {
